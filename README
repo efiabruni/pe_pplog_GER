@@ -1,0 +1,53 @@
+Lizenzen:
+Der ursprüngliche PPLOG, Version 1.1b wurde von Federico Ramírez (fedekun) programmiert und
+ist unter der GNU Public License v3 veröffentlich(siehe LICENSE in diesem Ordner).
+
+Dank an Scott Jarvis (sc0ttman), Chris (Catdude), Grant (Smokey01) und Jamesbond für Vorschläge und Hinweise auf Fehler. Siehe Kommentare im Script.
+
+Die Smileys die in diesem Blog benutzt werden wurden sind von lmproulx (http://www.picto-rama.blogspot.com/) und wurden in der öffentlichen Domain veröffentlicht.
+
+Changelog:
+Alle vorgenommenen Änderungen des pe_pplogs können im CHANGELOG in diesem Ordner gefunden werden.
+
+Installation:
+Den Ordner "pe_pplog" auf den Web-Server laden
+
+-Test:(den Web-Server starten) und auf http://localhost/pe_pplog gehen, Sie sollten den Blog mit der Willkommensnachricht sehen
+ Die Administrator Seite sollte unter http://localhost/pe_pplog/pe_admin.pl zu finden sein
+ 
+pe_Config.pl in einem Texteditor öffnen
+
+In pe_Config.pl 
+#Passwort ändern
+#Die anderen Optionen nach ihrem Wunsch ändern
+#Falls sie den Namen des Unterverzeichnisses ändern wollen (z.B von pe_pplog nach blog) ändern sie die Pfade zu dem "css" und "smilies" Ordnern entsprechend in pe_Config.pl
+Dem Web-Server Schreiberlaubnis für den "blog" Ordner geben 
+# Wie lauted der Benutzername:die Benutzergruppe des Web-servers (gebräuchlich sind "nobody:nobody")?
+# Einen Terminal öffnen
+geben Sie "chown -R username:usergroup /root/blog" ein und drücken Sie die Eingabetaste 
+geben Sie "chmod 750 /root/blog" ein und drücken Sie die Eingabetaste
+
+-Wieder testen:(den Web-Server starten) und auf http://localhost/pe_pplog gehen. Sie sollten den Blog mit der Willkommensnachricht sehen. 
+Gehen sie auf http://localhost/pe_pplog/pe_admin.pl und schreiben Sie Ihren ersten Eintrag :)
+
+Falls nicht:
+Siehe unten bei "Probleme?" 
+
+Die Stilvorlage kann in /css/style.css verändert werden (mit einem Texteditor öffnen)
+Falls Sie Einträge von der alten Version von pup_pplog (v1.1b) haben können Sie sie mit dem Script "change.pl" von der Webseite http://tine.pagekite.me/blog?viewDetailed=00035 importieren (In dem Terminal öffnen)
+
+Probleme?
+Fehlermeldung: 404 Not Found... sind die Dateien pe_pplog.pl und pe_admin.pl im Hauptverzeichniss des Web-Servers?
+Verschieben Sie die Dateien in das Hauptverzeichniss Ihres Severs. 
+Haben Sie die korrekte Adresse in ihren Browser eingegeben?
+
+Fehlermeldung: 403 Forbidden...
+Sie müssen eventuell perl Dateinen ablauffähig machen (chmod a+x /path../to../pe_pplog.pl and pe_admin.pl)
+Ist ihr Server darauf eingestell CGI (perl) Dateien auszuführen? (siehe in der Konfigurationsdatei des Web-Servers)
+
+Fehlermeldung: Server not found... Läuft der Web-Server?
+
+Fehlermeldung: 500 Internal Server Error... Ist der Pfad zu dem "blog" Ordner überall korrekt angegeben? Falls nicht korregieren!
+Haben Sie in letzter Zeit die pe_Config.pl Datei bearbeitet? Es könnte sich um einen Syntaxfehler handeln (meistens ein fehlendes ' oder ;)!
+
+Es ist nicht möglich neue Einträge oder Kommentare zu scheiben... Siehe oben
