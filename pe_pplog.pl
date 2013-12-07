@@ -578,6 +578,16 @@ elsif(r('viewDetailed') ne '' || r('sendComment') ne '')
 		print '<br />'.$locale{$lang}->{newuser};
 	}
 	# End of author checking, start adding comment
+	#check if the comment already exists
+	open (FILE, "<$config_commentsDatabaseFolder/$fileName.$config_dbFilesExtension");
+	while (<FILE>){
+		my $check=$title.'"'.$author.'"'.$content;
+		if ($_=~ /$check/){
+			print '<br />'.$locale{$lang}->{comtwice};
+			$do=0;
+		}
+	}
+	close FILE;
 	
 	if($do == 1)
 	{	
