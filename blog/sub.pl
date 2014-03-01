@@ -94,15 +94,15 @@ sub bbcodeButtons #Buttons for entry and edit
 			<input type="button" style="font-weight:bold" onClick="surroundText(\'{b}\', \'{/b}\', document.forms.submitform.content); return false;" value="b" />
 			<input type="button" style="font-style:italic" onClick="surroundText(\'{i}\', \'{/i}\', document.forms.submitform.content); return false;" value="i" />
 			<input type="button" style="text-decoration:underline" onClick="surroundText(\'{u}\', \'{/u}\', document.forms.submitform.content); return false;" value="u" />
-			<input type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.content); return false;" value="style" />
-			<input type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.content); return false;" value=" &#8226 li" />
+			<input type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.content); return false;" value="style" title="'.$locale{$lang}->{style}.'" />
+			<input type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.content); return false;" value=" &#8226 li" title="'.$locale{$lang}->{list}.'" />
 			</td></tr>
 			<tr class="screen"><td>&nbsp;</td><td>
-			<input type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.content); return false;" value="&#34/.&#34" />
-			<input type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.content); return false;" value="http://" />
-            <input type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.content); return false;" value="img" />
-			<input type="button" onClick="surroundText(\'{box= title=}\',\'{/box}\', document.forms.submitform.content); return false;" value="Box" />
-            <input type="button" onClick="surroundText(\'\',\'{url=/link/or/path rel=prettyPhoto title=.}{img}/path/to/thumbnail alt=. title=.{/img}{/url}\', document.forms.submitform.content); return false;" value="Pbox" />
+			<input type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.content); return false;" value="&#34/.&#34" title="'.$locale{$lang}->{quote}.'" />
+			<input type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.content); return false;" value="http://" title="'.$locale{$lang}->{http}.'" />
+            <input type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.content); return false;" value="img" title="'.$locale{$lang}->{img}.'" />
+			<input type="button" onClick="surroundText(\'{box= title=}\',\'{/box}\', document.forms.submitform.content); return false;" value="Box" title="'.$locale{$lang}->{box}.'" />
+            <input type="button" onClick="surroundText(\'{gal}\',\'{/gal}\', document.forms.submitform.content); return false;" value="'.$locale{$lang}->{newGallery}.'"  title="'.$locale{$lang}->{makegallery}.'" />
 			</tr><td>';
 		while ($_ = readdir (SM)){
 		foreach ($_){
@@ -112,6 +112,7 @@ sub bbcodeButtons #Buttons for entry and edit
 			}
 		}	
 		closedir SM;
+			#<input  type="button" onClick="surroundText(\'{\', \'/}\', document.forms.submitform.content); return false;" value=":-)"/>
 			print '<br /><input type=image alt="'.$locale{$lang}->{bbcode}.'"><div class=box /><iframe src=?BbcodeHelp=help#content target="_blank" width=650px height=90%></iframe></div></td>';
 
 }
@@ -124,23 +125,22 @@ sub bbcodeComments #Buttons for comments
 			<input  type="button" style="font-weight:bold" onClick="surroundText(\'{b}\', \'{/b}\', document.forms.submitform.content); return false;" value="b" />
 			<input  type="button" style="font-style:italic" onClick="surroundText(\'{i}\', \'{/i}\', document.forms.submitform.content); return false;" value="i" />
 			<input  type="button" style="text-decoration:underline" onClick="surroundText(\'{u}\', \'{/u}\', document.forms.submitform.content); return false;" value="u" />
-			<input  type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.content); return false;" value="style" />
+			<input type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.content); return false;" value="style" title="'.$locale{$lang}->{style}.'" />
 			</td></tr>
 			<tr class="screen"><td>&nbsp;</td><td>
-			<input  type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.content); return false;" value=" &#8226 li" />
-			<input  type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.content); return false;" value="&#34/.&#34" />
-			<input  type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.content); return false;" value="http://" />
-            <input  type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.content); return false;" value="img" />
-            </tr><td>';
+			<input type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.content); return false;" value=" &#8226 li" title="'.$locale{$lang}->{list}.'" />
+			<input type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.content); return false;" value="&#34/.&#34" title="'.$locale{$lang}->{quote}.'" />
+			<input type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.content); return false;" value="http://" title="'.$locale{$lang}->{http}.'" />
+            <input type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.content); return false;" value="img" title="'.$locale{$lang}->{img}.'" />
+			 </tr><td>';
         while ($_ = readdir (SM)){
 		foreach ($_){
 			my $name = $_;
 			$name =~s/(.+?).(jpg|jpeg|png|gif)/$1/gi;
-				print '<input type="image" onClick="surroundText(\'{'.$name.'/}\', \'\', document.forms.submitform.content); return false;" src="'.$config_smiliesFolder.'/'.$_.'" title="'.$name.'" />' if $_ =~ /(jpg|jpeg|png|gif)$/i;
+				print '<input type="image" onClick="surroundText(\'{'.$name.'/}\', \'\', document.forms.submitform.content); return false;" src="'.$config_smiliesFolder.'/'.$_.'" title="'.$name.'"/>' if $_ =~ /(jpg|jpeg|png|gif)$/i;
 			}
 		}	
 		closedir SM;
-			print '<br /><input type=image alt="'.$locale{$lang}->{bbcode}.'"><div class=box /><iframe src=?BbcodeHelp=help#content target="_blank" width=650px height=90%></iframe></div></td>';
 }
 
 sub getdate #Datum der Zeitzone anpassen
