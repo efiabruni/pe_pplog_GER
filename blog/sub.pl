@@ -430,11 +430,14 @@ Medien:<br />
 {url=http://webseite.com (options)}link{/url} <a href=#>link</a><br />
 {box=Thumbnail title=Titel}Bild{/box} eine Lightbox, um ein Bild einzufügen oder ähnliches einzufügen Bbcode benutzen. Eine Textbox mit dem style button erstellen.
 Falls kein Thumbnail vorhanden ist, ist der Titel ein Link..<br /><br />
-Den "Pbox" Button benutzen um eine Lightbox (Bild, Video oder externe Seite) zu erstellen mit einem Thumbnail<br />
+Den "Gallerie" Button benutzen um eine Gallerie von Bildern in einem Ordner zu erstellen; 
+Pfad zu dem Ordner von dem Hauptverzeichnis des Servers aus angeben, Thumbnails werden entweder aus 
+dem Ordner "thumbs" (gleiche Namen wie die Originalbilder) genommen oder die Originalbilder 
+werden auf Thumbnailgröße geschrumpft (bei großen Bilder wird das die Ladezeit beeinflussen)<br />
 <br />
 Mehr Möglichkeiten: <br />
 Weitere (+Optionen) können an der angegebenen Stelle eingetragen werden;<br /> Zum Beispiel: {img}bild.jpg title=Bildtext{/img}<br />
-Der Einfachkeit halber sind schon einige Optionen dem "Pbox" Button hinzugefügt worden, falls es nicht gebraucht wird, leer lassen</br>
+Der Einfachkeit halber sind schon einige Optionen dem "Style" Button hinzugefügt worden, falls es nicht gebraucht wird, leer lassen</br>
 <br />
 Beispiele für Optionen:<br />
 alt= Titel<br />
