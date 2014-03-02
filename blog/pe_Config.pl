@@ -66,7 +66,7 @@ our @config_ipBan = qw/202.325.35.145 165.265.26.65/;							# Gesperrte IP Adres
 
 #Erweiterungen und zusätzliches HTML 
 our @config_pluginsBlog = qw(contact);											#vohanden: contact Hier die Erweiterungen für den öffentlichen Blog hinzufügen
-our @config_pluginsAdmin = qw(editConfig notes emails upload);		#vorhanden: editConfig newGallery notes emails upload Hier die Erweiterungen für die Administratorseite hinzufügen
+our @config_pluginsAdmin = qw(editConfig notes emails upload);					#vorhanden: editConfig notes emails upload Hier die Erweiterungen für die Administratorseite hinzufügen
 our $config_contactAddress = ''; 												#Für die Kontagkterweiterung
 our @config_uploadFolders = qw(/images/photos /test /css); 						#Relativer Dateipfad vom Hauptverzeichniss des Web-Servers aus zu den Ordnern zum hochladen
 our @config_allowedMime = qw(image/ text/css text/html text/plain); 			#Zum Hochladen erlaubte MIME Arten
