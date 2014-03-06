@@ -290,7 +290,7 @@ sub menuEntries
 		if($i <= $config_menuEntriesLimit)
 		{
 			my @entry = split(/¬/, $_);
-			print '<a href="?viewDetailed=posts/'.$entry[4].'">'.$entry[0].'</a>';
+			print '<a href="?viewDetailed='.$entry[4].'">'.$entry[0].'</a>';
 			$i++;
 		}
 	}
@@ -322,7 +322,7 @@ sub menuComments
 		if($i <= $config_showLatestCommentsLimit)
 		{
 			my @entry = split(/"/, $_);
-			print '<a href="?viewDetailed=posts/'.$entry[4].'#'.$entry[5].'" title="'.$locale{$lang}->{entryby}.' '.$entry[1].'">'.$entry[0].'</a>'; #sc0ttman
+			print '<a href="?viewDetailed='.$entry[4].'#'.$entry[5].'" title="'.$locale{$lang}->{entryby}.' '.$entry[1].'">'.$entry[0].'</a>'; #sc0ttman
 			$i++;
 		}
 	}
@@ -705,21 +705,19 @@ function surroundText(text1, text2, textarea)
 }
 </script>';
 }
-#JQuery Funktionen
+#JQuery functions
 sub JQuery
 {
 	print '	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
 	 <script> $(document).ready(function(){$(".hide").hide();
-     $(".article .hide ").before("<div id=\'flip\'><a href=\'\' title=\''.$locale{$lang}->{read}.'\'>'.$locale{$lang}->{showhide}.'</a></div>");
-     $(".article #flip").click(function(event){$(this).next(".hide").slideToggle("slow");
-       event.preventDefault(); });
-     $(".slide #flip").mouseover(function(event){
+     $(".slide #flip").click(function(event){
 	 $(this).next(".hide").toggle("slow"); 
 		event.preventDefault(); });
 	$("#mobile").click(function(event){$("header div, form#mobile").slideToggle("slow");
 		event.preventDefault(); });
 	});</script>';
 }	
+
 #IP Adressen im Standartformat wiedergeben
 sub getIP
 {
