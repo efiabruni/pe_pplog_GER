@@ -15,6 +15,13 @@ sub basic_r
 	param($_[0]);
 }
 
+sub apo_r
+{
+	$_ = $_[0];
+	s/'/&apos;/gi;
+	return $_;
+}
+
 sub bbcode
 #`Bbcode zu HTML
 {
@@ -122,16 +129,16 @@ sub bbcodeComments #Buttons for comments
 	opendir (SM, $config_serverRoot.$config_smiliesFolder);
 		print
 			'<tr class="screen"><td>&nbsp;</td><td>
-			<input  type="button" style="font-weight:bold" onClick="surroundText(\'{b}\', \'{/b}\', document.forms.submitform.content); return false;" value="b" />
-			<input  type="button" style="font-style:italic" onClick="surroundText(\'{i}\', \'{/i}\', document.forms.submitform.content); return false;" value="i" />
-			<input  type="button" style="text-decoration:underline" onClick="surroundText(\'{u}\', \'{/u}\', document.forms.submitform.content); return false;" value="u" />
-			<input type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.content); return false;" value="style" title="'.$locale{$lang}->{style}.'" />
+			<input  type="button" style="font-weight:bold" onClick="surroundText(\'{b}\', \'{/b}\', document.forms.submitform.comContent); return false;" value="b" />
+			<input  type="button" style="font-style:italic" onClick="surroundText(\'{i}\', \'{/i}\', document.forms.submitform.comContent); return false;" value="i" />
+			<input  type="button" style="text-decoration:underline" onClick="surroundText(\'{u}\', \'{/u}\', document.forms.submitform.comContent); return false;" value="u" />
+			<input type="button" style="color:red" onClick="surroundText(\'{style=text-align:;color:}\', \'{/style}\', document.forms.submitform.comContent); return false;" value="style" title="'.$locale{$lang}->{style}.'" />
 			</td></tr>
 			<tr class="screen"><td>&nbsp;</td><td>
-			<input type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.content); return false;" value=" &#8226 li" title="'.$locale{$lang}->{list}.'" />
-			<input type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.content); return false;" value="&#34/.&#34" title="'.$locale{$lang}->{quote}.'" />
-			<input type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.content); return false;" value="http://" title="'.$locale{$lang}->{http}.'" />
-            <input type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.content); return false;" value="img" title="'.$locale{$lang}->{img}.'" />
+			<input type="button" onClick="surroundText(\'{*}\', \'{/*}\', document.forms.submitform.comContent); return false;" value=" &#8226 li" title="'.$locale{$lang}->{list}.'" />
+			<input type="button" onClick="surroundText(\'{qcode}\', \'{/qcode}\', document.forms.submitform.comContent); return false;" value="&#34/.&#34" title="'.$locale{$lang}->{quote}.'" />
+			<input type="button" onClick="surroundText(\'{url}\', \'{/url}\', document.forms.submitform.comContent); return false;" value="http://" title="'.$locale{$lang}->{http}.'" />
+            <input type="button" onClick="surroundText(\'{img}\', \'{/img}\', document.forms.submitform.comContent); return false;" value="img" title="'.$locale{$lang}->{img}.'" />
 			 </tr><td>';
         while ($_ = readdir (SM)){
 		foreach ($_){
