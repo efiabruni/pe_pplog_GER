@@ -471,7 +471,7 @@ sub doNewEntry
 		</tr><tr>
 		<td>'.$locale{$lang}->{ispage}.' <span text="'.$locale{$lang}->{spanpage}.'">(?)</span>
 		<input type="checkbox" name="isPage" value="1">
-		<input name="process" type="hidden" id="process" value="newEntry"></td> 
+		<input name="process" type="hidden" id="process" value="doEntry"></td> 
 		<td><input type="submit" name="Submit" value="'.$locale{$lang}->{subentry}.'">';
 		print '<input type="submit" name="Submit" value="'.$locale{$lang}->{newnote}.'">' if grep {$_ eq 'notes'} @config_pluginsAdmin;
 		print '</td></tr></table></form>';
