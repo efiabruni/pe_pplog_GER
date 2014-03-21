@@ -148,7 +148,6 @@ sub bbcodeComments #Buttons for comments
 			}
 		}	
 		closedir SM;
-			#<input  type="button" onClick="surroundText(\'{\', \'/}\', document.forms.submitform.content); return false;" value=":-)"/>
 			print '</td>';
 }
 

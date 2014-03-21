@@ -108,7 +108,7 @@ if ($config_bbCodeOnCommentaries == 1)
 print '<link href='.$config_currentStyleFolder.'/'.$config_currentStyleSheet.' rel=stylesheet type=text/css media="Screen, print">
 <link href='.$config_currentStyleFolder.'/mobile.css rel=stylesheet type=text/css media="only screen and (max-width: 550px), only screen and (max-device-width: 480px)">
 </head>
-<body><header><div id="header"><a href="/pe_pplog/pe_admin.pl"> '.$locale{$lang}->{admin}.'</a></div>
+<body><header>
 <a href=?page=1 style="text-decoration:none;"><h1 id="header">'.$config_blogHeader.'</h1></a><a id="mobile" href="">'.$locale{$lang}->{menu}.'</a>
 <div id="header"><ul class="menu"><li><a href=?page=1>'.$locale{$lang}->{index}.'</a></li></ul> ';
 #Plugin menu entry 24.05.13 and drop down menu 5.06.13
