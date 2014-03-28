@@ -683,7 +683,8 @@ EOF
 # Javascript für Bbcode	Schaltflächen
 sub javascript 
 {
-	print '<script language="javascript" type="text/javascript">
+	print <<EOF;
+	<script language="javascript" type="text/javascript">
 // FUNCTION BY SMF FORUMS http://www.simplemachines.org
 function surroundText(text1, text2, textarea)
 {
@@ -731,8 +732,10 @@ function surroundText(text1, text2, textarea)
 		textarea.focus(textarea.value.length - 1);
 	}
 }
-</script>';
+</script>
+EOF
 }
+
 #JQuery functions
 sub JQuery
 {
