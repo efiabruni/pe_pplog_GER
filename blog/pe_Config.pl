@@ -29,7 +29,7 @@ our $config_entriesOnRSS = 0;													# 0 = Alle Einträge, sont zeigt die Z
 
 #Menüeinstellungen:
 our $config_menuEntriesLimit = 10;												# Wieviele Einträge im Menü gezeigt werden
-our @config_menuLinks = qw(' http://puppylinux.com/,Puppy_Linux ', ' https://code.google.com/p/pplog/,Pup_pplog ', ' http://pplog.scottjarvis.com/,SJPPlog ', ' http://tine.pagekite.me/blog/,pe_pplog ');
+our %config_menuLinks =('pe_pplog'=>'http://tine.pagekite.me/blog', 'Puppy Linux'=>'http://puppylinux.com', 'Pup_pplog'=>'https://code.google.com/p/pplog/'); #Externe links im Menü
 
 our $config_showLatestComments = 1;												# Neuesten Kommentare im Menüanzeigen
 our $config_showLatestCommentsLimit = 10;										# Wieviele Kommentare sollen angezeigt werden
