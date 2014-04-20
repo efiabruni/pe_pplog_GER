@@ -32,7 +32,7 @@ use CGI':all';
 use POSIX qw(ceil floor);
 use POSIX qw/strftime/; #sc0ttman
 						
-do "./blog/pe_Config.pl" or require "./blog/pe_Config.pl.bak"; #Anstatt des . hier den Pfad zum Orner /blog angeben 
+do "blog_data/pe_Config.pm" or require "blog_data/pe_Config.pl.bak"; #Anstatt des . hier den Pfad zum Orner /blog angeben 
 require "$config_DatabaseFolder/sub.pl";
 
 if(r('do') eq 'RSS')
@@ -448,13 +448,13 @@ elsif (r('BbcodeHelp') ne '')
 elsif (grep {$_ eq r('do') } @config_pluginsBlog) #24.05.13 plugin section
 {
 	my $plugin = r('do');
-	do "$config_DatabaseFolder/$plugin.pl" or print '<br />'.$locale{$lang}->{noplugin}.' <a href="?page=1">'.$locale{$lang}->{back}.'</a>';
+	do "$config_DatabaseFolder/plugins/$plugin.pm" or print '<br />'.$locale{$lang}->{noplugin}.' <a href="?page=1">'.$locale{$lang}->{back}.'</a>';
 }
 #processes for plugin
 elsif (grep {$_ eq r('process') } @config_pluginsBlog)
 {
 	my $plugin = r('process');
-	do "$config_DatabaseFolder/$plugin.pl" or print '<br />'.$locale{$lang}->{noplugin}.' <a href="?page=1">'.$locale{$lang}->{back}.'</a>';
+	do "$config_DatabaseFolder/plugins/$plugin.pm" or print '<br />'.$locale{$lang}->{noplugin}.' <a href="?page=1">'.$locale{$lang}->{back}.'</a>';
 }
 
 else
